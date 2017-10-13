@@ -83,7 +83,7 @@ def process_weather_json(flags, weather_json):
 			ret += delimiter + "pressure " + pressure + " atm"
 	if flags.humidity or flags.everything:
 		ret += delimiter + "humidity " + str(weather_json["main"]["humidity"]) + "%"
-	if flags.time:
+	if flags.time or flags.everything:
 		date = weather_json["dt"]
 		time_collected = datetime.datetime.fromtimestamp(date).strftime("%H:%M:%S %Y-%m-%d")
 		ret += "\ntime and date collected: " + time_collected

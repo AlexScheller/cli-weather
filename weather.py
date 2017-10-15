@@ -104,7 +104,10 @@ def parse_flags():
 	return parser.parse_args()
 
 def main():
-	flags = parse_flags()
-	print(process_weather_json(flags, get_weather_json(flags)))
+	try:
+		flags = parse_flags()
+		print(process_weather_json(flags, get_weather_json(flags)))
+	except:
+		print("failed to return weather info")
 
 main()

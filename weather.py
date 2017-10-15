@@ -63,7 +63,12 @@ def process_weather_json(flags, weather_json):
 		ret += " "
 	else:
 		ret += "\n"
-	ret += str(temp) + " degrees" + delimiter +  weather_description
+	ret += str(temp) + " °"
+	if flags.metric:
+		ret += "C"
+	else:
+		ret += "F"
+	ret += delimiter +  weather_description
 	if flags.windspeed or flags.everything:
 		ret += delimiter + "wind " + str(weather_json["wind"]["speed"])
 		if flags.metric:

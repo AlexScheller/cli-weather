@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 import time
 import subprocess
@@ -19,6 +21,7 @@ def update_cache_and_display(weather_file):
 	weather_line = weather.stdout.read().decode("utf-8").rstrip()
 	weather_file.write(time_line + "\n")
 	weather_file.write(weather_line)
+	# print("(new) " + weather_line)
 	print(weather_line)
 	weather_file.close()
 
@@ -39,6 +42,7 @@ def main():
 			# has been less than five minutes since last query,
 			# return cached result
 			# print("less than five minutes, reading from cache")
+			# print("(cache) " + lines[1])
 			print(lines[1])
 			weather_file.close()
 	else:

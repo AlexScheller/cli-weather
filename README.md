@@ -2,6 +2,8 @@
 
 A simple script for getting weather info from the command line.
 
+![action shot](weather-example.png "shot of usage")
+
 NOTE: without supplying a key obtained from [here](https://openweathermap.org/appid) to "your-key-here" this script fails to run. Additionally, the "home_path" variable in "cached-weather.py" should be set to your home, not mine.
 
 If you want to call it anywhere and without prefixing it with "python", make sure you have python3 and the requests module installed then:
